@@ -7,7 +7,10 @@ const renderRawResponse = (res) => {
 
 const renderResponse = (res) => {
     var json_response = JSON.parse(res);
-    responseField.innerHTML = '<p>' + json_response.name + "</p>";
+    if (json_response !== null) {
+        responseField.innerHTML = '<p>' + json_response.name + "</p>";
+    }
+
 }
 
 
