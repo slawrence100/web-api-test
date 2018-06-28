@@ -7,7 +7,10 @@ const renderRawResponse = (res) => {
 
 const renderResponse = (res) => {
     if (json_response !== null) {
-        responseField.innerHTML = '<p>' + res.name + "</p>";
+        responseField.innerHTML = '<img src="' + res.sprites.front_default + '">';
+        responseField.innerHTML += '<p>' + res.name + "</p>";
+    } else {
+        responseField.innerHTML = "Loading. . .";
     }
 
 }
