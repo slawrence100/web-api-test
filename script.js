@@ -1,7 +1,7 @@
 const xhr = new XMLHttpRequest();
 var url = "http://pokeapi.co/api/v2/pokemon/";
 
-const inputField = document.getElementById("response-field");
+const responseField = document.getElementById("response-field");
 
 xhr.responseType = 'json';
 xhr.onreadystatechange = () => {
