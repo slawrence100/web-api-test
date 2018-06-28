@@ -1,5 +1,5 @@
 const xhr = new XMLHttpRequest();
-const url = "http://pokeapi.co/api/v2/pokemon/";
+var url = "http://pokeapi.co/api/v2/pokemon/";
 
 const inputField = document.getElementById("response-field");
 
