@@ -10,7 +10,7 @@ xhr.onreadystatechange = () => {
     }
 }
 
-url += randInt(1, 200);
+url += randInt(1, 720);
 url += "/";
 
 xhr.open('GET', url);
