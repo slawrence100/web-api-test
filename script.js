@@ -17,6 +17,7 @@ for (var i = 1; i <= 4; i++) {
 
     xhr.open('GET', url);
     xhr.send();
+    url = "https://pokeapi.co/api/v2/pokemon/";
 }
 renderResponse(responses);
 

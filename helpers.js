@@ -8,7 +8,7 @@ const renderRawResponse = (res) => {
 var correctAnswer = 0;
 
 const renderResponse = (_responses) => {
-    if (_response !== null) {
+    if (_responses !== null) {
         for (var i = 1; i <= 4; i++) {
             document.getElementById("btn" + i).innerHTML = _responses[i].name;
         }
