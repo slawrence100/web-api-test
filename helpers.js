@@ -18,8 +18,14 @@ const renderResponse = (_responses) => {
     }
 
 }
-
-
+// TODO: Implement button onclick actions
+function answer(ansNumber) {
+    if (ansNumber === correctAnswer) {
+        display.innerHTML += "<p>Correct!</p>";
+    } else {
+        display.innerHTML += "<p>Incorrect!</p>";
+    }
+}
 var randInt = function (low, high) {
     return Math.floor(Math.random() * (high - low + 1));
 }
