@@ -9,6 +9,7 @@ for (var i = 0; i < 4; i++) {
     xhr.onreadystatechange = () => {
         if (xhr.readyState === XMLHttpRequest.DONE) {
             responses.push(xhr.response);
+            console.log(responses.length);
         }
     }
 
