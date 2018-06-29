@@ -7,10 +7,10 @@ const renderRawResponse = (res) => {
 
 var correctAnswer = 0;
 
-const renderResponse = (_responses) => {
-    if (_responses !== null) {
-            document.getElementById("btn" + i).innerHTML = _responses[i].name;
-        display.innerHTML = '<img src="' + _responses.sprites.front_default + '">';
+const renderResponse = (response) => {
+    if (response !== null) {
+        document.getElementById("btn" + i).innerHTML = response.name;
+        display.innerHTML = '<img src="' + response.sprites.front_default + '">';
     } else {
         responseField.innerHTML = "Loading. . .";
     }

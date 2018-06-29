@@ -6,7 +6,7 @@ var responses = [];
 xhr.responseType = 'json';
 xhr.onreadystatechange = () => {
     if (xhr.readyState === XMLHttpRequest.DONE) {
-        responses.push(xhr.response);
+        renderResponse(xhr.response);
     }
 }
 
@@ -16,5 +16,5 @@ url += "/";
 xhr.open('GET', url);
 xhr.send();
 url = "https://pokeapi.co/api/v2/pokemon/";
-renderResponse(responses);
+
 
