@@ -1,18 +1,22 @@
 const xhr = new XMLHttpRequest();
 var url = "https://pokeapi.co/api/v2/pokemon/";
-var json_response;
 const responseField = document.getElementById("response-field");
+var responses = [];
 
-xhr.responseType = 'json';
-xhr.onreadystatechange = () => {
-    if (xhr.readyState === XMLHttpRequest.DONE) {
-        renderResponse(xhr.response);
+// Makes 4 GET requests to four JSON objects filled with Pokemon Data.
+for (var i = 1; i <= 4; i++) {
+    xhr.responseType = 'json';
+    xhr.onreadystatechange = () => {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            responses.append(xhr.response);
+        }
     }
+
+    url += randInt(1, 720);
+    url += "/";
+
+    xhr.open('GET', url);
+    xhr.send();
 }
-
-url += randInt(1, 720);
-url += "/";
-
-xhr.open('GET', url);
-xhr.send();
+renderResponse(responses);
 

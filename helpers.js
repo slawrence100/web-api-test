@@ -1,14 +1,18 @@
 
 const renderRawResponse = (res) => {
 
-    // Manipulates responseField to render the unformatted response
-    responseField.innerHTML = `<text>${JSON.stringify(res)}</text>`;
+    // Test function for rendering everything a received JSON will offer.
+    display.innerHTML = `<text>${JSON.stringify(res)}</text>`;
 }
 
-const renderResponse = (res) => {
+var correctAnswer = 0;;
+const renderResponse = (_responses) => {
     if (json_response !== null) {
-        responseField.innerHTML = '<img src="' + res.sprites.front_default + '">';
-        responseField.innerHTML += '<p>' + res.name + "</p>";
+        for (var i = 1; i <= 4; i++) {
+            document.getElementById("btn" + i).innerHTML = _responses[i].name;
+        }
+        correctAnswer = randInt(0, 3);
+        display.innerHTML = '<img src="' + _responses[correctAnswer].sprites.front_default + '">';
     } else {
         responseField.innerHTML = "Loading. . .";
     }
