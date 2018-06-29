@@ -9,24 +9,14 @@ var correctAnswer = 0;
 
 const renderResponse = (_responses) => {
     if (_responses !== null) {
-        for (var i = 0; i < 4; i++) {
             document.getElementById("btn" + i).innerHTML = _responses[i].name;
-        }
-        correctAnswer = randInt(0, 3);
-        display.innerHTML = '<img src="' + _responses[correctAnswer].sprites.front_default + '">';
+        display.innerHTML = '<img src="' + _responses.sprites.front_default + '">';
     } else {
         responseField.innerHTML = "Loading. . .";
     }
 
 }
-// TODO: Implement button onclick actions
-function answer(ansNumber) {
-    if (ansNumber === correctAnswer) {
-        display.innerHTML += "<p>Correct!</p>";
-    } else {
-        display.innerHTML += "<p>Incorrect!</p>";
-    }
-}
+
 var randInt = function (low, high) {
     return Math.floor(Math.random() * (high - low + 1));
 }
