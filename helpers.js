@@ -9,8 +9,8 @@ var correctAnswer = 0;
 
 const renderResponse = (response) => {
     if (response !== null) {
-        document.getElementById("btn").innerHTML = response.name;
-        display.innerHTML = '<img src="' + response.sprites.front_default + '">';
+        display.innerHTML += response.name;
+        display.innerHTML += '<img src="' + response.sprites.front_default + '">';
     } else {
         responseField.innerHTML = "Loading. . .";
     }
