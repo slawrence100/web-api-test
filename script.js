@@ -4,11 +4,11 @@ const responseField = document.getElementById("response-field");
 var responses = [];
 
 // Makes 4 GET requests to four JSON objects filled with Pokemon Data.
-for (var i = 1; i <= 4; i++) {
+for (var i = 0; i < 4; i++) {
     xhr.responseType = 'json';
     xhr.onreadystatechange = () => {
         if (xhr.readyState === XMLHttpRequest.DONE) {
-            responses.append(xhr.response);
+            responses.push(xhr.response);
         }
     }
 

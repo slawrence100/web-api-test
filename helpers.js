@@ -9,7 +9,7 @@ var correctAnswer = 0;
 
 const renderResponse = (_responses) => {
     if (_responses !== null) {
-        for (var i = 1; i <= 4; i++) {
+        for (var i = 0; i < 4; i++) {
             document.getElementById("btn" + i).innerHTML = _responses[i].name;
         }
         correctAnswer = randInt(0, 3);
