@@ -6,19 +6,20 @@ var responses = [];
 // Makes 4 GET requests to four JSON objects filled with Pokemon Data.
 for (var i = 0; i < 4; i++) {
     xhr.responseType = 'json';
-    xhr.onreadystatechange = () => {
-        if (xhr.readyState === XMLHttpRequest.DONE) {
-            responses.push(xhr.response);
-            console.log(responses.length);
+    setTimeout(function () {
+        xhr.onreadystatechange = () => {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                responses.push(xhr.response);
+            }
         }
-    }
 
-    url += randInt(1, 720);
-    url += "/";
+        url += randInt(1, 720);
+        url += "/";
 
-    xhr.open('GET', url);
-    xhr.send();
-    url = "https://pokeapi.co/api/v2/pokemon/";
+        xhr.open('GET', url);
+        xhr.send();
+        url = "https://pokeapi.co/api/v2/pokemon/";
+    }, 1000);
 }
 renderResponse(responses);
 
