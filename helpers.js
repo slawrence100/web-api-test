@@ -5,9 +5,10 @@ const renderRawResponse = (res) => {
     display.innerHTML = `<text>${JSON.stringify(res)}</text>`;
 }
 
-var correctAnswer = 0;;
+var correctAnswer = 0;
+
 const renderResponse = (_responses) => {
-    if (json_response !== null) {
+    if (_response !== null) {
         for (var i = 1; i <= 4; i++) {
             document.getElementById("btn" + i).innerHTML = _responses[i].name;
         }
